@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/* ── Base resets & dark theme ─────────────────────────────────────────────── */
+
+:root {
+  --color-background: #0a0f1c;
+  --color-foreground: #e2e8f0;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  background: var(--color-background);
+  color: var(--color-foreground);
+}
+
+/* Custom scrollbar (Webkit) */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #334155 transparent;
+}
+
+/* ── Citation badges in markdown output ──────────────────────────────────── */
+
+.cite-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0 0.125rem;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.375rem;
+  background: rgb(99 102 241 / 0.2);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  font-style: normal;
+  color: #a5b4fc;
+  ring: 1px solid rgb(99 102 241 / 0.3);
+  box-shadow: 0 0 0 1px rgb(99 102 241 / 0.3);
+  white-space: nowrap;
+}

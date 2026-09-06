@@ -1,0 +1,32 @@
+================================
+______________ coverage: platform win32, python 3.13.15-final-0 _______________
+
+Name                                Stmts   Miss  Cover   Missing
+-----------------------------------------------------------------
+api\__init__.py                         0      0   100%
+api\dependencies.py                    33      0   100%
+api\routes.py                         109     16    85%   78-79, 152-154, 241-242, 252-260, 366-367, 372
+config.py                              14      0   100%
+database.py                            12      0   100%
+main.py                                21      0   100%
+models\__init__.py                      0      0   100%
+models\db_models.py                    30      0   100%
+models\schemas.py                      38      0   100%
+services\__init__.py                    0      0   100%
+services\document_processor.py         38      0   100%
+services\embedding_service.py          19      0   100%
+services\rag_engine.py                 82      3    96%   192, 241-242
+services\vector_store.py               64      2    97%   63-64
+tests\__init__.py                       0      0   100%
+tests\conftest.py                      87      1    99%   28
+tests\run_tests.py                     35     35     0%   3-70
+tests\test_api_endpoints.py           105      0   100%
+tests\test_dependencies.py             47      0   100%
+tests\test_document_processor.py       55      0   100%
+tests\test_models_and_database.py      58      0   100%
+tests\test_rag_engine.py               70      0   100%
+tests\test_schemas.py                  88      0   100%
+tests\test_vector_store.py             69      0   100%
+-----------------------------------------------------------------
+TOTAL                                1074     57    95%
+======================= 54 passed, 3 warnings in 1.14s ========================

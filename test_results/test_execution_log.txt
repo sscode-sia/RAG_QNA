@@ -1,0 +1,118 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.15, pytest-9.1.1, pluggy-1.6.0 -- C:\RAG_caddence\backend\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\RAG_caddence\backend
+plugins: anyio-4.15.1, langsmith-0.12.1, cov-7.1.0
+collecting ... collected 54 items
+
+tests/test_api_endpoints.py::TestAPIEndpoints::test_health_check PASSED  [  1%]
+tests/test_api_endpoints.py::TestAPIEndpoints::test_upload_pdf_success PASSED [  3%]
+tests/test_api_endpoints.py::TestAPIEndpoints::test_upload_non_pdf_fails PASSED [  5%]
+tests/test_api_endpoints.py::TestAPIEndpoints::test_list_documents PASSED [  7%]
+tests/test_api_endpoints.py::TestAPIEndpoints::test_query_documents_success PASSED [  9%]
+tests/test_api_endpoints.py::TestAPIEndpoints::test_query_documents_validation_error PASSED [ 11%]
+tests/test_api_endpoints.py::TestAPIEndpoints::test_get_stats PASSED     [ 12%]
+tests/test_api_endpoints.py::TestAPIEndpoints::test_delete_document_success PASSED [ 14%]
+tests/test_api_endpoints.py::TestAPIEndpoints::test_delete_document_not_found PASSED [ 16%]
+tests/test_api_endpoints.py::TestAPIEndpoints::test_process_document_background_task PASSED [ 18%]
+tests/test_dependencies.py::TestDependencies::test_get_db_generator PASSED [ 20%]
+tests/test_dependencies.py::TestDependencies::test_get_embedding_service_singleton PASSED [ 22%]
+tests/test_dependencies.py::TestDependencies::test_get_vector_store_singleton PASSED [ 24%]
+tests/test_dependencies.py::TestDependencies::test_get_rag_engine_singleton PASSED [ 25%]
+tests/test_dependencies.py::TestDependencies::test_get_document_processor_singleton PASSED [ 27%]
+tests/test_document_processor.py::TestDocumentProcessor::test_extract_text_from_valid_pdf PASSED [ 29%]
+tests/test_document_processor.py::TestDocumentProcessor::test_extract_text_file_not_found PASSED [ 31%]
+tests/test_document_processor.py::TestDocumentProcessor::test_extract_text_corrupted_file PASSED [ 33%]
+tests/test_document_processor.py::TestDocumentProcessor::test_extract_text_skips_empty_pages PASSED [ 35%]
+tests/test_document_processor.py::TestDocumentProcessor::test_chunk_documents_metadata_and_attributes PASSED [ 37%]
+tests/test_document_processor.py::TestDocumentProcessor::test_chunking_size_granularity PASSED [ 38%]
+tests/test_models_and_database.py::TestDatabaseAndModels::test_init_db_idempotence PASSED [ 40%]
+tests/test_models_and_database.py::TestDatabaseAndModels::test_create_document_defaults PASSED [ 42%]
+tests/test_models_and_database.py::TestDatabaseAndModels::test_update_document_status_and_metrics PASSED [ 44%]
+tests/test_models_and_database.py::TestDatabaseAndModels::test_create_query_log PASSED [ 46%]
+tests/test_models_and_database.py::TestDatabaseAndModels::test_query_log_query_aggregation PASSED [ 48%]
+tests/test_rag_engine.py::TestRAGEngine::test_empty_context_handling PASSED [ 50%]
+tests/test_rag_engine.py::TestRAGEngine::test_coerce_content PASSED      [ 51%]
+tests/test_rag_engine.py::TestRAGEngine::test_extract_citations_exact_match PASSED [ 53%]
+tests/test_rag_engine.py::TestRAGEngine::test_extract_citations_deduplication PASSED [ 55%]
+tests/test_rag_engine.py::TestRAGEngine::test_extract_citations_fallback_when_llm_omits PASSED [ 57%]
+tests/test_rag_engine.py::TestRAGEngine::test_generate_answer_success PASSED [ 59%]
+tests/test_rag_engine.py::TestRAGEngine::test_generate_answer_llm_exception_raises_runtime_error PASSED [ 61%]
+tests/test_schemas.py::TestDocumentResponse::test_valid_document_response PASSED [ 62%]
+tests/test_schemas.py::TestDocumentResponse::test_default_counts PASSED  [ 64%]
+tests/test_schemas.py::TestDocumentResponse::test_from_attributes PASSED [ 66%]
+tests/test_schemas.py::TestQueryRequest::test_valid_query_request PASSED [ 68%]
+tests/test_schemas.py::TestQueryRequest::test_default_empty_document_ids PASSED [ 70%]
+tests/test_schemas.py::TestQueryRequest::test_empty_query_fails PASSED   [ 72%]
+tests/test_schemas.py::TestQueryRequest::test_excessive_query_length_fails PASSED [ 74%]
+tests/test_schemas.py::TestCitation::test_citation_structure PASSED      [ 75%]
+tests/test_schemas.py::TestCitation::test_missing_required_fields_fails PASSED [ 77%]
+tests/test_schemas.py::TestTokenUsageAndQueryResponse::test_token_usage_defaults PASSED [ 79%]
+tests/test_schemas.py::TestTokenUsageAndQueryResponse::test_query_response_serialization PASSED [ 81%]
+tests/test_schemas.py::TestUsageStats::test_usage_stats_defaults PASSED  [ 83%]
+tests/test_schemas.py::TestUsageStats::test_usage_stats_custom_values PASSED [ 85%]
+tests/test_vector_store.py::TestEmbeddingService::test_dimensions_lookup PASSED [ 87%]
+tests/test_vector_store.py::TestEmbeddingService::test_embed_texts_and_query PASSED [ 88%]
+tests/test_vector_store.py::TestVectorStoreService::test_collection_creation PASSED [ 90%]
+tests/test_vector_store.py::TestVectorStoreService::test_upsert_and_count_vectors PASSED [ 92%]
+tests/test_vector_store.py::TestVectorStoreService::test_similarity_search_all_docs PASSED [ 94%]
+tests/test_vector_store.py::TestVectorStoreService::test_similarity_search_filtered_by_doc_id PASSED [ 96%]
+tests/test_vector_store.py::TestVectorStoreService::test_delete_document PASSED [ 98%]
+tests/test_vector_store.py::TestVectorStoreService::test_count_vectors_handles_exception PASSED [100%]
+
+============================== warnings summary ===============================
+.venv\Lib\site-packages\starlette\testclient.py:53
+  C:\RAG_caddence\backend\.venv\Lib\site-packages\starlette\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
+
+main.py:57
+  C:\RAG_caddence\backend\main.py:57: DeprecationWarning: 
+          on_event is deprecated, use lifespan event handlers instead.
+  
+          Read more about it in the
+          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+          
+    @app.on_event("startup")
+
+.venv\Lib\site-packages\fastapi\applications.py:4681
+  C:\RAG_caddence\backend\.venv\Lib\site-packages\fastapi\applications.py:4681: DeprecationWarning: 
+          on_event is deprecated, use lifespan event handlers instead.
+  
+          Read more about it in the
+          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+          
+    return self.router.on_event(event_type)  # ty: ignore[deprecated]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=============================== tests coverage ================================
+______________ coverage: platform win32, python 3.13.15-final-0 _______________
+
+Name                                Stmts   Miss  Cover   Missing
+-----------------------------------------------------------------
+api\__init__.py                         0      0   100%
+api\dependencies.py                    33      0   100%
+api\routes.py                         109     16    85%   78-79, 152-154, 241-242, 252-260, 366-367, 372
+config.py                              14      0   100%
+database.py                            12      0   100%
+main.py                                21      0   100%
+models\__init__.py                      0      0   100%
+models\db_models.py                    30      0   100%
+models\schemas.py                      38      0   100%
+services\__init__.py                    0      0   100%
+services\document_processor.py         38      0   100%
+services\embedding_service.py          19      0   100%
+services\rag_engine.py                 82      3    96%   192, 241-242
+services\vector_store.py               64      2    97%   63-64
+tests\__init__.py                       0      0   100%
+tests\conftest.py                      87      1    99%   28
+tests\run_tests.py                     35     35     0%   3-70
+tests\test_api_endpoints.py           105      0   100%
+tests\test_dependencies.py             47      0   100%
+tests\test_document_processor.py       55      0   100%
+tests\test_models_and_database.py      58      0   100%
+tests\test_rag_engine.py               70      0   100%
+tests\test_schemas.py                  88      0   100%
+tests\test_vector_store.py             69      0   100%
+-----------------------------------------------------------------
+TOTAL                                1074     57    95%
+======================= 54 passed, 3 warnings in 1.14s ========================
